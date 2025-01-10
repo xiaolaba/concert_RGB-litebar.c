@@ -72,6 +72,10 @@ int main(void) {
     // Blink GREEN LED 3 times to indicate initialization complete
     blink_green_led(3);
 
+    // init color of light bar, likely purple
+    set_pwm(RED_LED_PIN, 0xff);
+    set_pwm(BLUE_LED_PIN, 0xff);
+
     while (1) {
         // Read incoming byte from UART
         if (UART_ReadByte(&incoming_byte)) {
